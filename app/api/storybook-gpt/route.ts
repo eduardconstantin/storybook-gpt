@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Configuration, OpenAIApi } from "openai";
+import { template, component } from "../../data/story-template";
 
 if (!process.env.OPENAI_API_KEY) {
   throw new Error("OPENAI_API_KEY is not defined in .env file. Please add it there (see README.md for more details).");
@@ -10,7 +11,7 @@ export async function GET(request: Request) {
     apiKey: process.env.OPENAI_API_KEY,
   });
   const openai = new OpenAIApi(configuration);
-  const prompt = `Write a Storybook component for a React component, without any comments added. Here's the code for the input component:${"import React, { useState } from 'react';const CounterButton = ({handleClick}) => {  const [count, setCount] = useState(0);  return (    <button onClick={handleClick}>      {`Clicked ${count} time${count === 1 ? '' : 's'}`}    </button>  );};export default CounterButton;"}This is the template you should use for the storybook story, keep the format provided, add component variants if needed:${"import type { Meta, StoryObj } from '@storybook/react';//import componentconst meta: Meta<//type of component> = {  title: //title of component,  component: //component ,};export default meta;type Story = StoryObj<//type of component>;const StoryTemplate: Story = {  render: (args) => //render component,};export Primary = {  ...StoryTemplate,  args: {      //component's props  }}"}`;
+  const prompt = `Write a Storybook component for a React component, without any comments added. Here's the code for the input component: ${component} This is the template you should use for the storybook story, keep the provided format, add component variants if possible: ${template}`;
 
   const completion = await openai.createCompletion({
     model: "text-davinci-003",
