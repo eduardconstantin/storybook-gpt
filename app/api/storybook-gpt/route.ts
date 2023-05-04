@@ -6,7 +6,7 @@ if (!process.env.OPENAI_API_KEY) {
   throw new Error("OPENAI_API_KEY is not defined in .env file. Please add it there (see README.md for more details).");
 }
 
-export async function GET(request: Request) {
+export async function POST(request: Request) {
   const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
   });
@@ -23,5 +23,5 @@ export async function GET(request: Request) {
     presence_penalty: 0.5,
   });
 
-  return NextResponse.json({ result: completion.data.choices[0].text });
+  return NextResponse.json(completion.data.choices[0].text);
 }
