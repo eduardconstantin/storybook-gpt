@@ -18,6 +18,7 @@ export async function ComponentConverter({ component, apiKey }: ConvertType) {
     max_tokens: 1024,
     temperature: 0.7,
     top_p: 1.0,
+    n: 1,
     frequency_penalty: 1,
     presence_penalty: 0.5,
     stop: ["\n\n"],
