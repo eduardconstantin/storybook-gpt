@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { ConvertType } from "./page";
 
-export const Form = ({ convertComponent }: Prop) => {
+const Form = ({ convertComponent }: Prop) => {
   const {
     register,
     handleSubmit,
@@ -19,7 +19,7 @@ export const Form = ({ convertComponent }: Prop) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} >
       <input type="text" {...register("apiKey", { required: "This is required." })} />
       <ErrorMessage errors={errors} name="apiKey" as="p" />
       <textarea {...register("component", { required: "This is required." })} />
@@ -29,6 +29,8 @@ export const Form = ({ convertComponent }: Prop) => {
     </form>
   );
 };
+
+export default Form;
 
 type FormValues = {
   component: string;

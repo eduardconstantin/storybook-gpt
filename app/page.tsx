@@ -1,6 +1,7 @@
 import React from "react";
 import { Configuration, OpenAIApi } from "openai";
-import { Form } from "./form";
+import Form from "./form";
+import Header from "./header";
 import { template } from "./data/story-template";
 
 export async function ComponentConverter({ component, apiKey }: ConvertType) {
@@ -27,10 +28,9 @@ export async function ComponentConverter({ component, apiKey }: ConvertType) {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <Form convertComponent={ComponentConverter} />
-      </div>
+    <main className="flex min-h-screen flex-col items-center p-24 font-mono max-w-5xl m-auto">
+      <Header />
+      <Form convertComponent={ComponentConverter} />
     </main>
   );
 }
