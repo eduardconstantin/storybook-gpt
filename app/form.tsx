@@ -1,9 +1,10 @@
+"use client";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { ErrorMessage } from "@hookform/error-message";
 import { ConvertType } from "./page";
 
 export const Form = ({ convertComponent }: Prop) => {
-  "use client";
   const {
     register,
     handleSubmit,
@@ -19,8 +20,10 @@ export const Form = ({ convertComponent }: Prop) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input type="text" {...register("apiKey", { required: true })} />
-      <textarea {...register("component", { required: true })} />
+      <input type="text" {...register("apiKey", { required: "This is required." })} />
+      <ErrorMessage errors={errors} name="apiKey" as="p" />
+      <textarea {...register("component", { required: "This is required." })} />
+      <ErrorMessage errors={errors} name="component" as="p" />
       <button type="submit">Create story</button>
       <textarea disabled {...register("story", { required: false })} />
     </form>
