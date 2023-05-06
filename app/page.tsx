@@ -6,7 +6,7 @@ import { template } from "./data/story-template";
 
 export async function ComponentConverter({ component, apiKey }: ConvertType) {
   "use server";
-  const prompt = `Write a Storybook component for a React component, without any comments added. Here's the code for the input component:\n ${component}\n This is the template you should use for the storybook story, keep the provided format, add component variants if possible:\n ${template}`;
+  const prompt = `Write a Storybook component from a React component, without any comments added. Here's the input code for the react component:\n${component}\nThis is the template I want you to use to create the storybook component, keep the provided format, add component variants if possible:\n${template}\n`;
 
   const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY || apiKey,
@@ -23,12 +23,12 @@ export async function ComponentConverter({ component, apiKey }: ConvertType) {
     stop: ["\n\n"],
   });
 
-  return response.data.choices[0].text?.trim();
+  return response.data.choices[0].text;
 }
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-24 font-mono max-w-5xl m-auto">
+    <main className="flex min-h-screen flex-col justify-center items-center px-24 font-mono max-w-6xl m-auto">
       <Header />
       <Form convertComponent={ComponentConverter} />
     </main>
