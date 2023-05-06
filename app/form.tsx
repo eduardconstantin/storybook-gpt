@@ -19,13 +19,27 @@ const Form = ({ convertComponent }: Prop) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} >
-      <input type="text" {...register("apiKey", { required: "This is required." })} />
-      <ErrorMessage errors={errors} name="apiKey" as="p" />
-      <textarea {...register("component", { required: "This is required." })} />
-      <ErrorMessage errors={errors} name="component" as="p" />
-      <button type="submit">Create story</button>
-      <textarea disabled {...register("story", { required: false })} />
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="bg-[#131215] border border-zinc-700 rounded-2xl p-12 flex flex-row"
+    >
+      <div>
+        <div className="flex flex-col">
+          <label className="color-zinc-300">OPENAI API KEY</label>
+          <input type="text" {...register("apiKey", { required: "This is required." })} />
+          <ErrorMessage errors={errors} name="apiKey" as="p" />
+        </div>
+        <div className="flex flex-col">
+          <label className="color-zinc-300">OPENAI API KEY</label>
+          <textarea {...register("component", { required: "This is required." })} />
+          <ErrorMessage errors={errors} name="component" as="p" />
+        </div>
+        <button type="submit">Create story</button>
+      </div>
+      <div className="flex flex-col">
+        <label className="color-zinc-300">STORYBOOK STORY</label>
+        <textarea disabled {...register("story", { required: false })} />
+      </div>
     </form>
   );
 };
