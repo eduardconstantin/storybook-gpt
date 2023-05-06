@@ -3,7 +3,7 @@ import { Configuration, OpenAIApi } from "openai";
 import { Form } from "./form";
 import { template } from "./data/story-template";
 
-export async function ComponentConverter({ component, apiKey }: { component: string; apiKey: string }) {
+export async function ComponentConverter({ component, apiKey }: ConvertType) {
   "use server";
   const prompt = `Write a Storybook component for a React component, without any comments added. Here's the code for the input component:\n ${component}\n This is the template you should use for the storybook story, keep the provided format, add component variants if possible:\n ${template}`;
 
@@ -34,3 +34,8 @@ export default function Home() {
     </main>
   );
 }
+
+export type ConvertType = {
+  component: string;
+  apiKey: string;
+};
