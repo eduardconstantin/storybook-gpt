@@ -4,7 +4,7 @@ import GitHubButton from "react-github-btn";
 
 const Header = () => {
   return (
-    <header className="flex flex-row w-[100%] justify-between items-center mb-2">
+    <header className="flex flex-row w-full justify-between items-center mb-2">
       <div>
         <p className="font-bold text-3xl leading-7">STORYBOOK GPT</p>
         <p className="text-base">Generate Storybook stories from React components</p>
