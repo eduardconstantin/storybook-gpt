@@ -1,9 +1,7 @@
 <h1 align="center">Storybook GPT</h1>
 <br />
 
-Storybook GPT is a web application that can be used to convert React components into Storybook stories using OpenAI API. 
-It is built with Next.js 13, the React framework for the web that supports server components, streaming, and layouts. 
-It also uses TypeScript for type safety and TailwindCSS for styling. With NextStory, you can easily create and share interactive UI components for your projects.
+Storybook GPT is a web application that can be used to convert React components into Storybook stories. It is using OpenAI API to convert the components and it is built with NextJS 13, the React framework for the web that supports server components, streaming, and layouts. It also uses TypeScript for type safety and TailwindCSS for styling. With Storybook GPT, you can easily create and share interactive UI components for your projects.
 
 <br />
 <img src="app-preview.gif"/>
