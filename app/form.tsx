@@ -66,7 +66,7 @@ const Form = ({ convertComponent }: Prop) => {
           />
         </div>
         <button
-          className="flex flex-row items-center justify-center gap-2 text-base transition-all duration-300 hover:from-rose-700 hover:to-rose-500 bg-gradient-to-r from-rose-500 to-rose-700 py-3 px-7 w-fit rounded-full outline outline-[5px] outline-rose-500/30"
+          className="flex flex-row items-center justify-center gap-2 text-base font-semibold transition-all duration-300 hover:from-rose-700 hover:to-rose-500 bg-gradient-to-r from-rose-500 to-rose-700 py-3 px-7 w-fit rounded-full outline outline-[5px] outline-rose-500/30"
           type="submit"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
