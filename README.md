@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Storybook GPT</h1>
+<br />
 
-## Getting Started
+Storybook GPT is a web application that can be used to convert React components into Storybook stories using OpenAI API. 
+It is built with Next.js 13, the React framework for the web that supports server components, streaming, and layouts. 
+It also uses TypeScript for type safety and TailwindCSS for styling. With NextStory, you can easily create and share interactive UI components for your projects.
 
-First, run the development server:
+<br />
+<img src="app-preview.gif"/>
+
+<div align="center">
+<br />
+
+[![Project license](https://img.shields.io/github/license/eduardconstantin/storybook-gpt?style=flat-square)](LICENSE)
+[![Contributors](https://img.shields.io/github/contributors/eduardconstantin/storybook-gpt?style=flat-square)](https://github.com/eduardconstantin/storybook-gpt/graphs/contributors)
+[![Issue](https://img.shields.io/github/issues/eduardconstantin/storybook-gpt?style=flat-square)](https://github.com/eduardconstantin/storybook-gpt/issues)
+[![PRs](https://img.shields.io/github/issues-pr/eduardconstantin/storybook-gpt?style=flat-square)](https://github.com/eduardconstantin/storybook-gpt/pulls)
+[![Stars](https://img.shields.io/github/stars/eduardconstantin/storybook-gpt?style=flat-square)](https://github.com/eduardconstantin/storybook-gpt/stargazers)
+
+</div>
+
+## 🌟 Features
+
+- Dark mode
+- Copy to clipboard
+
+## 🌱 Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/eduardconstantin/storybook-gpt.git
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Input your OPENAI API key in the .env file, you can get your API key [here](https://platform.openai.com/account/api-keys):
+
+```bash
+OPENAI_API_KEY=$YOUR_API_KEY
+```
+
+Run the app:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Add your react component to the input field and hit generate story, in a few seconds you will have a storybook story generated.
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
+## 👥 Contributing
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+I welcome feedback and contributions from other developers, which can help improve the quality of the code and the application overall.
 
-## Learn More
+In order to create an issue or a pull request with your changes, please read [our contribution guidelines](CONTRIBUTING.md), and thank you for being involved!
 
-To learn more about Next.js, take a look at the following resources:
+For a full list of all authors and contributors, see
+[the contributors page](https://github.com/eduardconstantin/storybook-gpt/contributors).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📜 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
