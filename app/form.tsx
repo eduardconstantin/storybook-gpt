@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
-import { ConvertType } from "./page";
+import { ConvertType } from "@storybook-gpt/lib/componentConverter";
 
 const Form = ({ convertComponent }: Prop) => {
   const {
