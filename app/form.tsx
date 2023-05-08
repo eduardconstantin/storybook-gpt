@@ -41,7 +41,7 @@ const Form = ({ convertComponent }: Prop) => {
             type="text"
             autoComplete="off"
             placeholder="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-            {...register("apiKey")}
+            {...register("apiKey", { required: "This field is required." })}
           />
           <ErrorMessage
             errors={errors}
