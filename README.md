@@ -19,8 +19,8 @@ Storybook GPT is a web application that can be used to convert React components 
 
 ## 🌟 Features
 
--   Dark mode
--   Copy to clipboard
+- Dark mode
+- Copy to clipboard
 
 ## 🌱 Getting Started
 
