@@ -1,13 +1,15 @@
-"use client";
-import React from "react";
-import GitHubButton from "react-github-btn";
+'use client'
+import React from 'react'
+import GitHubButton from 'react-github-btn'
 
 const Header = () => {
   return (
     <header className="flex flex-row w-full justify-between items-center mb-3">
       <div>
         <p className="font-bold text-3xl leading-7">STORYBOOK GPT</p>
-        <p className="text-base text-zinc-400">Generate Storybook stories from React components</p>
+        <p className="text-base text-zinc-400">
+          Generate Storybook stories from React components
+        </p>
       </div>
       <div>
         <GitHubButton
@@ -22,6 +24,6 @@ const Header = () => {
         </GitHubButton>
       </div>
     </header>
-  );
-};
-export default Header;
+  )
+}
+export default Header

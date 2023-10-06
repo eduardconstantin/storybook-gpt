@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
 
-import Form from "./form";
-import Header from "./header";
-import { ComponentConverter } from "@storybook-gpt/lib/componentConverter";
+import Form from './form'
+import Header from './header'
+import { ComponentConverter } from '@storybook-gpt/lib/componentConverter'
 
 export default function Home() {
   return (
@@ -10,5 +10,5 @@ export default function Home() {
       <Header />
       <Form convertComponent={ComponentConverter} />
     </main>
-  );
+  )
 }
