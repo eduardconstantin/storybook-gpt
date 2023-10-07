@@ -29,13 +29,13 @@ const Form = ({ convertComponent }: Prop) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="bg-[#131215] border border-zinc-700 rounded-2xl p-12 flex flex-row gap-12"
+      className="flex flex-col gap-12 p-12 my-8 md:flex-row bg-gradient-to-t from-zinc-800 to-zinc-900 rounded-2xl"
     >
-      <div className="flex flex-col gap-4 w-96 items-center">
-        <div className="flex flex-col gap-1 w-full">
-          <label className="text-zinc-300 text-sm">OPENAI API KEY</label>
+      <div className="flex flex-col items-center gap-4 w-96">
+        <div className="flex flex-col w-full gap-1">
+          <label className="text-sm text-zinc-300">OPENAI API KEY</label>
           <input
-            className={`py-3 px-4 bg-[#201F22]/[.7] rounded-xl ${
+            className={`py-3 px-4 bg-gradient-to-r from-zinc-900 to-zinc-800 rounded-xl ${
               !errors.apiKey && "focus-visible:outline focus-visible:outline-zinc-700"
             } ${errors.apiKey && "outline outline-1 outline-red-600"}`}
             type="text"
@@ -46,13 +46,13 @@ const Form = ({ convertComponent }: Prop) => {
           <ErrorMessage
             errors={errors}
             name="apiKey"
-            render={({ message }) => <p className="text-red-600 text-xs">{message}</p>}
+            render={({ message }) => <p className="text-xs text-red-600">{message}</p>}
           />
         </div>
-        <div className="flex flex-col gap-1 h-full w-full">
-          <label className="text-zinc-300 text-sm">REACT COMPONENT</label>
+        <div className="flex flex-col w-full h-full gap-1">
+          <label className="text-sm text-zinc-300">REACT COMPONENT</label>
           <textarea
-            className={`h-full min-h-[400px] rounded-xl py-3 px-4 bg-[#201F22]/[.7] focus-visible:outline focus-visible:outline-zinc-700 ${
+            className={`h-full min-h-[400px] rounded-xl py-3 px-4 bg-gradient-to-r from-zinc-900 to-zinc-800 focus-visible:outline focus-visible:outline-zinc-700 ${
               errors.component && "outline outline-1 outline-red-600"
             }`}
             placeholder={`import React from 'react'\n\nconst MyComponent = () => {\n  render <></>\n}\n\nexport default MyComponent;`}
@@ -62,7 +62,7 @@ const Form = ({ convertComponent }: Prop) => {
           <ErrorMessage
             errors={errors}
             name="component"
-            render={({ message }) => <p className="text-red-600 text-xs">{message}</p>}
+            render={({ message }) => <p className="text-xs text-red-600">{message}</p>}
           />
         </div>
         <button
@@ -78,12 +78,12 @@ const Form = ({ convertComponent }: Prop) => {
       <div className="w-0.5 bg-[#201F22]"></div>
 
       <div className="flex flex-col w-96">
-        <div className="flex flex-col gap-1 h-full">
-          <label className="text-zinc-300 text-sm">STORYBOOK STORY</label>
+        <div className="flex flex-col h-full gap-1">
+          <label className="text-sm text-zinc-300">STORYBOOK STORY</label>
           <textarea
             readOnly={true}
             onClick={() => !!getValues("story") && navigator.clipboard.writeText(getValues("story")!)}
-            className="h-full min-h-[500px] py-3 px-4 rounded-xl bg-[#201F22]/[.7] focus-visible:outline focus-visible:outline-zinc-700"
+            className="h-full min-h-[500px] py-3 px-4 rounded-xl bg-gradient-to-t from-zinc-900 to-zinc-800 focus-visible:outline focus-visible:outline-zinc-700"
             {...register("story", { required: false })}
           />
         </div>
