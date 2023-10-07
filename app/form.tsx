@@ -29,7 +29,7 @@ const Form = ({ convertComponent }: Prop) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col gap-12 p-12 my-8 md:flex-row bg-gradient-to-t from-zinc-800 to-zinc-900 rounded-2xl"
+      className="flex flex-row gap-12 p-12 my-8 bg-gradient-to-t from-zinc-800 to-zinc-900 rounded-2xl"
     >
       <div className="flex flex-col items-center gap-4 w-96">
         <div className="flex flex-col w-full gap-1">
