@@ -36,8 +36,9 @@ const Form = ({ convertComponent }: Prop) => {
           <label className="text-sm text-zinc-300">OPENAI API KEY</label>
           <input
             className={`py-3 px-4 bg-gradient-to-r from-zinc-900 to-zinc-800 rounded-xl ${
-              !errors.apiKey && "focus-visible:outline focus-visible:outline-zinc-700"
-            } ${errors.apiKey && "outline outline-1 outline-red-600"}`}
+              !errors.apiKey &&
+              'focus-visible:outline focus-visible:outline-zinc-700'
+            } ${errors.apiKey && 'outline outline-1 outline-red-600'}`}
             type="text"
             autoComplete="off"
             placeholder="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
@@ -48,14 +49,16 @@ const Form = ({ convertComponent }: Prop) => {
           <ErrorMessage
             errors={errors}
             name="apiKey"
-            render={({ message }) => <p className="text-xs text-red-600">{message}</p>}
+            render={({ message }) => (
+              <p className="text-xs text-red-600">{message}</p>
+            )}
           />
         </div>
         <div className="flex flex-col w-full h-full gap-1">
           <label className="text-sm text-zinc-300">REACT COMPONENT</label>
           <textarea
             className={`h-full min-h-[400px] rounded-xl py-3 px-4 bg-gradient-to-r from-zinc-900 to-zinc-800 focus-visible:outline focus-visible:outline-zinc-700 ${
-              errors.component && "outline outline-1 outline-red-600"
+              errors.component && 'outline outline-1 outline-red-600'
             }`}
             placeholder={`import React from 'react'\n\nconst MyComponent = () => {\n  render <></>\n}\n\nexport default MyComponent;`}
             {...register('component', {
@@ -66,7 +69,9 @@ const Form = ({ convertComponent }: Prop) => {
           <ErrorMessage
             errors={errors}
             name="component"
-            render={({ message }) => <p className="text-xs text-red-600">{message}</p>}
+            render={({ message }) => (
+              <p className="text-xs text-red-600">{message}</p>
+            )}
           />
         </div>
         <button
@@ -94,9 +99,12 @@ const Form = ({ convertComponent }: Prop) => {
           <label className="text-sm text-zinc-300">STORYBOOK STORY</label>
           <textarea
             readOnly={true}
-            onClick={() => !!getValues("story") && navigator.clipboard.writeText(getValues("story")!)}
+            onClick={() =>
+              !!getValues('story') &&
+              navigator.clipboard.writeText(getValues('story')!)
+            }
             className="h-full min-h-[500px] py-3 px-4 rounded-xl bg-gradient-to-t from-zinc-900 to-zinc-800 focus-visible:outline focus-visible:outline-zinc-700"
-            {...register("story", { required: false })}
+            {...register('story', { required: false })}
           />
         </div>
       </div>
