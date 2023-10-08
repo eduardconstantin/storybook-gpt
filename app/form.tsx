@@ -29,13 +29,15 @@ const Form = ({ convertComponent }: Prop) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-row gap-12 p-12 my-8 bg-gradient-to-t from-zinc-800 to-zinc-900 rounded-2xl"
+      className="flex flex-row gap-12 p-12 my-8 bg-slate-100 shadow-lg dark:bg-gradient-to-t dark:from-zinc-800 dark:to-zinc-900 rounded-2xl"
     >
       <div className="flex flex-col items-center gap-4 w-96">
         <div className="flex flex-col w-full gap-1">
-          <label className="text-sm text-zinc-300">OPENAI API KEY</label>
+          <label className="text-sm text-dark dark:text-zinc-300 ">
+            OPENAI API KEY
+          </label>
           <input
-            className={`py-3 px-4 bg-gradient-to-r from-zinc-900 to-zinc-800 rounded-xl ${
+            className={`py-3 px-4 text-dark bg-gradient-to-r from-slate-200 to-slate-300 dark:text-light dark:from-zinc-900 dark:to-zinc-800 rounded-xl ${
               !errors.apiKey &&
               'focus-visible:outline focus-visible:outline-zinc-700'
             } ${errors.apiKey && 'outline outline-1 outline-red-600'}`}
@@ -55,9 +57,11 @@ const Form = ({ convertComponent }: Prop) => {
           />
         </div>
         <div className="flex flex-col w-full h-full gap-1">
-          <label className="text-sm text-zinc-300">REACT COMPONENT</label>
+          <label className="text-sm text-dark dark:text-zinc-300">
+            REACT COMPONENT
+          </label>
           <textarea
-            className={`h-full min-h-[400px] rounded-xl py-3 px-4 bg-gradient-to-r from-zinc-900 to-zinc-800 focus-visible:outline focus-visible:outline-zinc-700 ${
+            className={`h-full min-h-[400px] rounded-xl py-3 px-4 text-dark bg-gradient-to-r from-slate-200 to-slate-300 dark:text-light dark:from-zinc-900 dark:to-zinc-800 focus-visible:outline focus-visible:outline-zinc-700 ${
               errors.component && 'outline outline-1 outline-red-600'
             }`}
             placeholder={`import React from 'react'\n\nconst MyComponent = () => {\n  render <></>\n}\n\nexport default MyComponent;`}
@@ -96,14 +100,16 @@ const Form = ({ convertComponent }: Prop) => {
 
       <div className="flex flex-col w-96">
         <div className="flex flex-col h-full gap-1">
-          <label className="text-sm text-zinc-300">STORYBOOK STORY</label>
+          <label className="text-sm text-dark dark:text-zinc-300">
+            STORYBOOK STORY
+          </label>
           <textarea
             readOnly={true}
             onClick={() =>
               !!getValues('story') &&
               navigator.clipboard.writeText(getValues('story')!)
             }
-            className="h-full min-h-[500px] py-3 px-4 rounded-xl bg-gradient-to-t from-zinc-900 to-zinc-800 focus-visible:outline focus-visible:outline-zinc-700"
+            className="h-full min-h-[500px] py-3 px-4 rounded-xl text-dark bg-gradient-to-r from-slate-200 to-slate-300 dark:text-light dark:from-zinc-900 dark:to-zinc-800 focus-visible:outline focus-visible:outline-zinc-700"
             {...register('story', { required: false })}
           />
         </div>
