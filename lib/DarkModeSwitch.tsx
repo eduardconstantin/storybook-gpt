@@ -1,39 +1,30 @@
-'use client'
-import React, { useEffect, useState } from 'react'
-import { useTheme } from 'next-themes'
-import { BsMoonStars, BsSun } from 'react-icons/bs'
+"use client";
+import React from "react";
+import { useTheme } from "next-themes";
+import { BsMoonStarsFill, BsSunFill } from "react-icons/bs";
 
 const DarkModeSwitch = () => {
-  const [mounted, setMounted] = useState<boolean>(false)
-  const { theme, setTheme } = useTheme()
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const { theme, setTheme } = useTheme();
 
-  console.log(theme)
-
-  if (!mounted) {
-    return null
-  }
   return (
-    <div className="flex items-center gap-5">
-      {theme === 'dark' ? (
-        <BsMoonStars
+    <div className="flex items-center gap-5 mb-2">
+      {theme === "light" ? (
+        <BsMoonStarsFill
           size={25}
-          style={{ cursor: 'pointer' }}
-          onClick={() => setTheme('light')}
+          color="#f43f5e"
+          style={{cursor:"pointer"}}
+          onClick={() => setTheme("dark")}
         />
       ) : (
-        <>
-          <BsSun
-            size={30}
-            style={{ color: '#fbbf24', cursor: 'pointer' }}
-            onClick={() => setTheme('dark')}
-          />
-        </>
+        <BsSunFill
+          size={25}
+          color="#f43f5e"
+          style={{cursor:"pointer"}}
+          onClick={() => setTheme("light")}
+        />
       )}
     </div>
-  )
-}
+  );
+};
 
-export default DarkModeSwitch
+export default DarkModeSwitch;
