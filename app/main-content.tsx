@@ -25,7 +25,6 @@ export const MainContent = () => {
   const [updateStoriesList, setUpdateStoriesList] = useState<boolean>(false)
 
   useEffect(() => {
-    console.log('oi')
     getStoriesList()
   }, [updateStoriesList])
 
