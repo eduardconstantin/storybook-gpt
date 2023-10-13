@@ -1,28 +1,36 @@
 'use client'
-import React, { useState } from 'react'
-import { useForm } from 'react-hook-form'
 import { ErrorMessage } from '@hookform/error-message'
-import { ConvertType } from '@storybook-gpt/lib/componentConverter'
+import { ComponentConverter } from '@storybook-gpt/lib/componentConverter'
+import React, { useState } from 'react'
+import { saveStorage } from './utils/localStorage'
+import { FormType, FormValues, StoriesType } from './main-content'
 
-const Form = ({ convertComponent }: Prop) => {
+const Form = ({ form, items, setItems }: Prop) => {
+  const [hasClicked, setHasClicked] = useState(false)
   const {
     register,
     handleSubmit,
     setValue,
     getValues,
     formState: { errors },
-  } = useForm<FormValues>()
-
-  const [hasClicked, setHasClicked] = useState(false)
+  } = form
 
   const onSubmit = async (data: FormValues) => {
     setHasClicked(true)
     const { component, apiKey } = data
-    const story = await convertComponent({
+    const story = await ComponentConverter({
       component: component.replace(/\r?\n/g, '\\n').trim(),
       apiKey,
     })
-    setValue('story', story)
+
+    const storyObject = {
+      name: getValues('componentName'),
+      component: story || '',
+    }
+    setValue('story', storyObject.component)
+    setItems([...items, storyObject])
+    saveStorage([...items, storyObject])
+
     setHasClicked(false)
   }
 
@@ -45,6 +53,28 @@ const Form = ({ convertComponent }: Prop) => {
             autoComplete="off"
             placeholder="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             {...register('apiKey', {
+              required: 'This field is required.',
+            })}
+          />
+          <ErrorMessage
+            errors={errors}
+            name="apiKey"
+            render={({ message }) => (
+              <p className="text-xs text-red-600">{message}</p>
+            )}
+          />
+        </div>
+        <div className="flex flex-col w-full gap-1">
+          <label className="text-sm text-zinc-300">REACT COMPONENT NAME</label>
+          <input
+            className={`py-3 px-4 bg-gradient-to-r from-zinc-900 to-zinc-800 rounded-xl ${
+              !errors.apiKey &&
+              'focus-visible:outline focus-visible:outline-zinc-700'
+            } ${errors.apiKey && 'outline outline-1 outline-red-600'}`}
+            type="text"
+            autoComplete="off"
+            placeholder="My Component"
+            {...register('componentName', {
               required: 'This field is required.',
             })}
           />
@@ -120,15 +150,9 @@ const Form = ({ convertComponent }: Prop) => {
 
 export default Form
 
-type FormValues = {
-  component: string
-  apiKey: string
-  story?: string
-}
-
 type Prop = {
-  convertComponent: ({
-    component,
-    apiKey,
-  }: ConvertType) => Promise<string | undefined>
+  form: FormType
+  items: StoriesType[]
+  setItems: React.Dispatch<React.SetStateAction<StoriesType[]>>
+  setUpdateStoriesList: React.Dispatch<React.SetStateAction<boolean>>
 }

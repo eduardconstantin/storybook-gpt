@@ -1,14 +1,11 @@
-import React from 'react'
-
-import Form from './form'
 import Header from './header'
-import { ComponentConverter } from '@storybook-gpt/lib/componentConverter'
+import { MainContent } from './main-content'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col justify-center items-center px-24 font-mono max-w-6xl m-auto ">
+    <main className="flex min-h-screen flex-col justify-center items-center px-24 font-mono max-w-6xl mx-auto my-5">
       <Header />
-      <Form convertComponent={ComponentConverter} />
+      <MainContent />
     </main>
   )
 }

@@ -7,7 +7,6 @@ export type ConvertType = {
 }
 
 export async function ComponentConverter({ component, apiKey }: ConvertType) {
-  'use server'
   const prompt = `Write a Storybook component from a React component, without any comments added. Here's the input code for the react component:\n${component}\nThis is the template I want you to use to create the storybook component, keep the provided format, add component variants if possible:\n${template}\n`
 
   const configuration = new Configuration({
