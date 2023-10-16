@@ -65,9 +65,11 @@ const Form = ({ form, items, setItems }: Prop) => {
           />
         </div>
         <div className="flex flex-col w-full gap-1">
-          <label className="text-sm text-zinc-300">REACT COMPONENT NAME</label>
+          <label className="text-sm text-dark dark:text-zinc-300 ">
+            REACT COMPONENT NAME
+          </label>
           <input
-            className={`py-3 px-4 bg-gradient-to-r from-zinc-900 to-zinc-800 rounded-xl ${
+            className={`py-3 px-4 text-dark bg-gradient-to-r from-slate-200 to-slate-300 dark:text-light dark:from-zinc-900 dark:to-zinc-800 rounded-xl  ${
               !errors.apiKey &&
               'focus-visible:outline focus-visible:outline-zinc-700'
             } ${errors.apiKey && 'outline outline-1 outline-red-600'}`}
