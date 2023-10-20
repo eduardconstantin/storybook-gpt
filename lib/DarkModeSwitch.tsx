@@ -14,6 +14,7 @@ const DarkModeSwitch = () => {
           color="#f43f5e"
           style={{cursor:"pointer"}}
           onClick={() => setTheme("dark")}
+          title="Switch to Dark Mode"
         />
       ) : (
         <BsSunFill
@@ -21,6 +22,7 @@ const DarkModeSwitch = () => {
           color="#f43f5e"
           style={{cursor:"pointer"}}
           onClick={() => setTheme("light")}
+          title="Switch to Light Mode"
         />
       )}
     </div>
