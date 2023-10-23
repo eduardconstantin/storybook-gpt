@@ -15,3 +15,7 @@
 body {
   color: rgb(var(--foreground-rgb));
 }
+
+span span {
+  display: flex;
+}
