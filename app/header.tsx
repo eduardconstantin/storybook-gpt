@@ -15,7 +15,7 @@ const Header = () => {
         </p>
       </div>
       <div className="flex items-center gap-5 ">
-        <DarkModeSwitch />
+        <span className="alignment-fix"><DarkModeSwitch /></span>
         <GitHubButton
           href="https://github.com/eduardconstantin/storybook-gpt"
           data-color-scheme="no-preference: dark; light: light; dark: dark;"
