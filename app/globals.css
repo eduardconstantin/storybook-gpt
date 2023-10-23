@@ -16,6 +16,6 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
-span.alignment-fix {
-  margin-top: -6px;
+span span {
+  display: flex;
 }
