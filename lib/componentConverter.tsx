@@ -1,4 +1,4 @@
-import { Configuration, OpenAIApi } from 'openai'
+import OpenAI from 'openai'
 import { template } from '@storybook-gpt/app/data/story-template'
 
 export type ConvertType = {
@@ -9,11 +9,10 @@ export type ConvertType = {
 export async function ComponentConverter({ component, apiKey }: ConvertType) {
   const prompt = `Write a Storybook component from a React component, without any comments added. Here's the input code for the react component:\n${component}\nThis is the template I want you to use to create the storybook component, keep the provided format, add component variants if possible:\n${template}\n`
 
-  const configuration = new Configuration({
+  const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY || apiKey,
   })
-  const openai = new OpenAIApi(configuration)
-  const response = await openai.createCompletion({
+  const response = await openai.completions.create({
     model: 'gpt-3.5-turbo-instruct',
     prompt: prompt,
     max_tokens: 2048,
@@ -25,5 +24,5 @@ export async function ComponentConverter({ component, apiKey }: ConvertType) {
     stop: ['\n\n'],
   })
 
-  return response.data.choices[0].text
+  return response.choices[0].text
 }
