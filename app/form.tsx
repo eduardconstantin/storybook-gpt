@@ -37,17 +37,17 @@ const Form = ({ form, items, setItems }: Prop) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-row gap-12 p-12 my-8 bg-slate-100 shadow-lg dark:bg-gradient-to-t dark:from-zinc-800 dark:to-zinc-900 rounded-2xl"
+      className="flex flex-row gap-12 p-12 mb-8 bg-slate-100 shadow-lg dark:bg-[#202026] rounded-2xl"
     >
-      <div className="flex flex-col items-center gap-4 w-96">
+      <div className="flex flex-col items-center gap-4 w-[450px]">
         <div className="flex flex-col w-full gap-1">
           <label className="text-sm text-dark dark:text-zinc-300 ">
             OPENAI API KEY
           </label>
           <input
-            className={`py-3 px-4 text-dark bg-gradient-to-r from-slate-200 to-slate-300 dark:text-light dark:from-zinc-900 dark:to-zinc-800 rounded-xl ${
+            className={`py-3 px-4 text-dark bg-slate-300 dark:text-light dark:bg-[#00000034] rounded-xl ${
               !errors.apiKey &&
-              'focus-visible:outline focus-visible:outline-zinc-700'
+              'focus-visible:outline focus-visible:outline-[#FF4785]'
             } ${errors.apiKey && 'outline outline-1 outline-red-600'}`}
             type="text"
             autoComplete="off"
@@ -69,9 +69,9 @@ const Form = ({ form, items, setItems }: Prop) => {
             REACT COMPONENT NAME
           </label>
           <input
-            className={`py-3 px-4 text-dark bg-gradient-to-r from-slate-200 to-slate-300 dark:text-light dark:from-zinc-900 dark:to-zinc-800 rounded-xl  ${
+            className={`py-3 px-4 text-dark bg-slate-300 dark:text-light dark:bg-[#00000034] rounded-xl  ${
               !errors.apiKey &&
-              'focus-visible:outline focus-visible:outline-zinc-700'
+              'focus-visible:outline focus-visible:outline-[#FF4785]'
             } ${errors.apiKey && 'outline outline-1 outline-red-600'}`}
             type="text"
             autoComplete="off"
@@ -93,7 +93,7 @@ const Form = ({ form, items, setItems }: Prop) => {
             REACT COMPONENT
           </label>
           <textarea
-            className={`h-full min-h-[400px] rounded-xl py-3 px-4 text-dark bg-gradient-to-r from-slate-200 to-slate-300 dark:text-light dark:from-zinc-900 dark:to-zinc-800 focus-visible:outline focus-visible:outline-zinc-700 ${
+            className={`h-full min-h-[400px] rounded-xl py-3 px-4 text-dark bg-slate-300 dark:text-light dark:bg-[#00000034] focus-visible:outline focus-visible:outline-[#FF4785] ${
               errors.component && 'outline outline-1 outline-red-600'
             }`}
             placeholder={`import React from 'react'\n\nconst MyComponent = () => {\n  render <></>\n}\n\nexport default MyComponent;`}
@@ -111,7 +111,7 @@ const Form = ({ form, items, setItems }: Prop) => {
           />
         </div>
         <button
-          className="flex flex-row items-center justify-center gap-2 text-base font-semibold transition-all duration-300 hover:from-rose-700 hover:to-rose-500 bg-gradient-to-r from-rose-500 to-rose-700 py-3 px-7 w-fit rounded-full outline outline-[5px] outline-rose-500/30"
+          className="flex flex-row items-center justify-center gap-2 text-base font-semibold transition-all duration-300 hover:bg-[#da3f72] bg-[#FF4785] py-3 px-7 w-full rounded-full outline outline-[3px] outline-rose-500/30"
           type="submit"
         >
           <svg
@@ -128,9 +128,9 @@ const Form = ({ form, items, setItems }: Prop) => {
             : 'Generate story'}
         </button>
       </div>
-      <div className="w-0.5 bg-[#201F22]"></div>
+      <div className="w-0.5 bg-[#00000034]"></div>
 
-      <div className="flex flex-col w-96">
+      <div className="flex flex-col w-[450px]">
         <div className="flex flex-col h-full gap-1">
           <label className="text-sm text-dark dark:text-zinc-300">
             STORYBOOK STORY
@@ -141,7 +141,7 @@ const Form = ({ form, items, setItems }: Prop) => {
               !!getValues('story') &&
               navigator.clipboard.writeText(getValues('story')!)
             }
-            className="h-full min-h-[500px] py-3 px-4 rounded-xl text-dark bg-gradient-to-r from-slate-200 to-slate-300 dark:text-light dark:from-zinc-900 dark:to-zinc-800 focus-visible:outline focus-visible:outline-zinc-700"
+            className="h-full min-h-[500px] py-3 px-4 rounded-xl text-dark bg-slate-300 dark:text-light dark:bg-[#00000034] focus-visible:outline focus-visible:outline-[#FF4785]"
             {...register('story', { required: false })}
           />
         </div>
