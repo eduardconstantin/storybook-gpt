@@ -1,5 +1,5 @@
-import Header from './header'
-import { MainContent } from './main-content'
+import Header from './components/header'
+import { MainContent } from './components/main-content'
 
 export default function Home() {
   return (

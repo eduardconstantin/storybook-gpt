@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { deleteStorage } from './utils/localStorage'
-import { FormType, StoriesType } from './main-content'
+import { FormType, StoriesType } from './components/main-content'
 
 const Stories = ({
   form,

@@ -12,6 +12,7 @@ export async function ComponentConverter({ component, apiKey }: ConvertType) {
   const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY || apiKey,
   })
+  
   const response = await openai.chat.completions.create({
     model: 'gpt-3.5-turbo-instruct',
     messages: [
