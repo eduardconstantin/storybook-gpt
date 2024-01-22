@@ -1,4 +1,4 @@
-import { StoriesType } from '../main-content'
+import { StoriesType } from '../components/main-content'
 
 export const getStorage = () => {
   const storiesString = localStorage.getItem('stories') || '[]'

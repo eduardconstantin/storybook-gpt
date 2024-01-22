@@ -9,9 +9,9 @@ import {
   UseFormSetValue,
   useForm,
 } from 'react-hook-form'
-import Form from './form'
-import Stories from './stories'
-import { getStorage } from './utils/localStorage'
+import Form from '../form'
+import Stories from '../stories'
+import { getStorage } from '../utils/localStorage'
 
 export const MainContent = () => {
   const {

@@ -1,9 +1,9 @@
 'use client'
 import { ErrorMessage } from '@hookform/error-message'
-import { ComponentConverter } from '@storybook-gpt/lib/componentConverter'
+import { ComponentConverter } from '@storybook-gpt/app/utils/componentConverter'
 import React, { useState } from 'react'
 import { saveStorage } from './utils/localStorage'
-import { FormType, FormValues, StoriesType } from './main-content'
+import { FormType, FormValues, StoriesType } from './components/main-content'
 
 const Form = ({ form, items, setItems }: Prop) => {
   const [hasClicked, setHasClicked] = useState(false)

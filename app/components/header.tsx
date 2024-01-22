@@ -1,5 +1,5 @@
 'use client'
-import DarkModeSwitch from '@storybook-gpt/lib/DarkModeSwitch'
+import DarkModeSwitch from '@storybook-gpt/app/components/DarkModeSwitch'
 import React from 'react'
 import GitHubButton from 'react-github-btn'
 
