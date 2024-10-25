@@ -37,9 +37,9 @@ const Form = ({ form, items, setItems }: Prop) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-row gap-12 p-12 mb-8 bg-slate-100 shadow-lg dark:bg-[#292930] rounded-2xl"
+      className="flex flex-col sm:flex-row  gap-12 p-12 mb-8 bg-slate-100 shadow-lg dark:bg-[#292930] rounded-2xl"
     >
-      <div className="flex flex-col items-center gap-4 w-[450px]">
+      <div className="flex flex-col items-center gap-4 w-72 md:w-64 lg:w-96 ">
         <div className="flex flex-col w-full gap-1">
           <label className="text-sm text-dark dark:text-zinc-300 ">
             OPENAI API KEY
@@ -64,7 +64,7 @@ const Form = ({ form, items, setItems }: Prop) => {
             )}
           />
         </div>
-        <div className="flex flex-col w-full gap-1">
+        <div className="flex flex-col w-full md:w-full gap-1">
           <label className="text-sm text-dark dark:text-zinc-300 ">
             REACT COMPONENT NAME
           </label>
@@ -130,7 +130,7 @@ const Form = ({ form, items, setItems }: Prop) => {
       </div>
       <div className="w-0.5 bg-[#00000034]"></div>
 
-      <div className="flex flex-col w-[450px]">
+      <div className="flex flex-col w-72 md:w-[450px] ">
         <div className="flex flex-col h-full gap-1">
           <label className="text-sm text-dark dark:text-zinc-300">
             STORYBOOK STORY
