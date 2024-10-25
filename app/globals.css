@@ -19,3 +19,59 @@ body {
 span span {
   display: flex;
 }
+
+/* globals.css */
+
+/* Neon Glow effect background */
+.bg-glow-gradient {
+  background: radial-gradient(circle, rgba(75, 0, 130, 0.3) 0%, rgba(0, 0, 0, 0) 80%);
+  filter: blur(80px);
+}
+
+/* Smooth glowing animation */
+@keyframes glow {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.neon-glow {
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.7), 0 0 30px rgba(75, 0, 130, 0.5);
+}
+
+/* Fade-in for the page content */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Moving line animations for the sides */
+@keyframes lineMove {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-line-move {
+  animation: lineMove 10s linear infinite;
+}
+
+/* Smooth glowing animation */
+.animate-glow {
+  animation: glow 5s infinite;
+}
