@@ -5,7 +5,7 @@ import GitHubButton from 'react-github-btn'
 
 const Header = () => {
   return (
-    <div className="flex flex-row w-full justify-between items-center m-4">
+    <div className="flex flex-col w-full justify-between items-center m-4">
       <div>
         <p className="font-bold text-3xl leading-7 text-dark dark:text-light">
           STORYBOOK GPT
@@ -27,7 +27,7 @@ const Header = () => {
           Star
         </GitHubButton>
       </div>
-      <div className="flex items-center gap-4 mt-4">
+      <div className="flex items-center gap-3 mt-2">
         <a href="mailto:ibinceanu.eduard@yahoo.com" target="_blank">
           <img
             src="https://img.icons8.com/fluent/32/000000/email-open.png"
