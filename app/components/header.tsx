@@ -15,24 +15,22 @@ const Header = () => {
         </p>
       </div>
       <div className="flex items-center gap-5 ">
-      <div class="social-links">
-          <!-- Email -->
-          <a href="ibinceanu.eduard@yahoo.com" target="_blank">
-          <img src="https://img.icons8.com/fluent/48/000000/email-open.png" alt="Email">
+      <div className="social-links">
+          {/* Email */}
+          <a href="mailto:ibinceanu.eduard@yahoo.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.icons8.com/fluent/48/000000/email-open.png" alt="Email" />
           </a>
-    
-          <!-- GitHub -->
-          <a href="eduardconstantin.github.io" target="_blank">
-              <img src="https://img.icons8.com/fluent/48/000000/github.png" alt="GitHub">
+
+          {/* GitHub */}
+          <a href="https://eduardconstantin.github.io" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.icons8.com/fluent/48/000000/github.png" alt="GitHub" />
           </a>
-          
-          <!-- Twitter -->
-          <a href="https://x.com/_Eduard26" target="_blank">
-              <img src="https://img.icons8.com/fluent/48/000000/twitter.png" alt="Twitter">
+
+          {/* Twitter */}
+          <a href="https://x.com/_Eduard26" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.icons8.com/fluent/48/000000/twitter.png" alt="Twitter" />
           </a>
-    
- 
-        </div>
+      </div>
         <DarkModeSwitch />
         <GitHubButton
           href="https://github.com/eduardconstantin/storybook-gpt"
