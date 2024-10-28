@@ -5,17 +5,16 @@ import GitHubButton from 'react-github-btn'
 
 const Header = () => {
   return (
-    <header className="flex flex-row w-full justify-between items-center m-4">
+    <header className="flex flex-col md:flex-row w-full justify-between items-center m-4">
       <div>
         <p className="font-bold text-3xl leading-7 text-dark dark:text-light">
           STORYBOOK GPT
         </p>
-        <p className="text-base text-zinc-400">
+        <p className="text-base text-left text-[#FF4785]">
           Generate Storybook stories from React components
         </p>
       </div>
       <div className="flex items-center gap-5 ">
-        <DarkModeSwitch />
         <GitHubButton
           href="https://github.com/eduardconstantin/storybook-gpt"
           data-color-scheme="no-preference: dark; light: light; dark: dark;"
@@ -26,6 +25,7 @@ const Header = () => {
         >
           Star
         </GitHubButton>
+        <DarkModeSwitch />
       </div>
     </header>
   )

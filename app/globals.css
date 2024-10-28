@@ -19,3 +19,16 @@ body {
 span span {
   display: flex;
 }
+
+
+::-webkit-scrollbar{
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #FF4785;
+}
+
+::-webkit-scrollbar-track{
+  background: slategrey;
+}
