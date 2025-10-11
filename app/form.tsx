@@ -37,15 +37,16 @@ const Form = ({ form, items, setItems }: Prop) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col sm:flex-row  gap-12 p-12 mb-8 bg-slate-100 shadow-lg dark:bg-[#292930] rounded-2xl"
+      className="flex w-full flex-col gap-8 rounded-2xl bg-slate-100 p-6 shadow-lg dark:bg-[#292930] lg:flex-row lg:gap-10 lg:p-10"
     >
-      <div className="flex flex-col items-center gap-4 w-72 md:w-64 lg:w-96 ">
-        <div className="flex flex-col w-full gap-1">
+      {/* Left Column */}
+      <div className="flex w-full flex-col items-center gap-4 lg:w-1/2">
+        <div className="flex w-full flex-col gap-1">
           <label className="text-sm text-dark dark:text-zinc-300 ">
             OPENAI API KEY
           </label>
           <input
-            className={`py-3 px-4 text-dark bg-slate-300 dark:text-light dark:bg-[#00000034] rounded-xl ${
+            className={`w-full rounded-xl bg-slate-300 py-3 px-4 text-dark dark:bg-[#00000034] dark:text-light ${
               !errors.apiKey &&
               'focus-visible:outline focus-visible:outline-[#FF4785]'
             } ${errors.apiKey && 'outline outline-1 outline-red-600'}`}
@@ -64,12 +65,12 @@ const Form = ({ form, items, setItems }: Prop) => {
             )}
           />
         </div>
-        <div className="flex flex-col w-full md:w-full gap-1">
+        <div className="flex w-full flex-col gap-1">
           <label className="text-sm text-dark dark:text-zinc-300 ">
             REACT COMPONENT NAME
           </label>
           <input
-            className={`py-3 px-4 text-dark bg-slate-300 dark:text-light dark:bg-[#00000034] rounded-xl  ${
+            className={`w-full rounded-xl bg-slate-300 py-3 px-4 text-dark dark:bg-[#00000034] dark:text-light  ${
               !errors.apiKey &&
               'focus-visible:outline focus-visible:outline-[#FF4785]'
             } ${errors.apiKey && 'outline outline-1 outline-red-600'}`}
@@ -88,12 +89,12 @@ const Form = ({ form, items, setItems }: Prop) => {
             )}
           />
         </div>
-        <div className="flex flex-col w-full h-full gap-1">
+        <div className="flex h-full w-full flex-col gap-1">
           <label className="text-sm text-dark dark:text-zinc-300">
             REACT COMPONENT
           </label>
           <textarea
-            className={`h-full min-h-[400px] rounded-xl py-3 px-4 text-dark bg-slate-300 dark:text-light dark:bg-[#00000034] focus-visible:outline focus-visible:outline-[#FF4785] ${
+            className={`h-full min-h-[300px] w-full rounded-xl bg-slate-300 py-3 px-4 text-dark dark:bg-[#00000034] dark:text-light focus-visible:outline focus-visible:outline-[#FF4785] lg:min-h-[400px] ${
               errors.component && 'outline outline-1 outline-red-600'
             }`}
             placeholder={`import React from 'react'\n\nconst MyComponent = () => {\n  render <></>\n}\n\nexport default MyComponent;`}
@@ -111,7 +112,7 @@ const Form = ({ form, items, setItems }: Prop) => {
           />
         </div>
         <button
-          className="flex flex-row items-center justify-center gap-2 text-base font-semibold transition-all duration-300 hover:bg-[#da3f72] bg-[#FF4785] py-3 px-7 w-full rounded-full outline outline-[3px] outline-rose-500/30"
+          className="flex w-full flex-row items-center justify-center gap-2 rounded-full bg-[#FF4785] py-3 px-7 text-base font-semibold text-white outline outline-[3px] outline-rose-500/30 transition-all duration-300 hover:bg-[#da3f72]"
           type="submit"
         >
           <svg
@@ -128,10 +129,13 @@ const Form = ({ form, items, setItems }: Prop) => {
             : 'Generate story'}
         </button>
       </div>
-      <div className="w-0.5 bg-[#00000034]"></div>
 
-      <div className="flex flex-col w-72 md:w-[450px] ">
-        <div className="flex flex-col h-full gap-1">
+      {/* Divider */}
+      <div className="h-px w-full bg-[#00000034] lg:h-auto lg:w-px"></div>
+
+      {/* Right Column */}
+      <div className="flex w-full flex-col lg:w-1/2">
+        <div className="flex h-full flex-col gap-1">
           <label className="text-sm text-dark dark:text-zinc-300">
             STORYBOOK STORY
           </label>
@@ -141,7 +145,7 @@ const Form = ({ form, items, setItems }: Prop) => {
               !!getValues('story') &&
               navigator.clipboard.writeText(getValues('story')!)
             }
-            className="h-full min-h-[500px] py-3 px-4 rounded-xl text-dark bg-slate-300 dark:text-light dark:bg-[#00000034] focus-visible:outline focus-visible:outline-[#FF4785]"
+            className="h-full min-h-[350px] w-full cursor-pointer rounded-xl bg-slate-300 py-3 px-4 text-dark dark:bg-[#00000034] dark:text-light focus-visible:outline focus-visible:outline-[#FF4785] lg:min-h-[500px]"
             {...register('story', { required: false })}
           />
         </div>
