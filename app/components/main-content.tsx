@@ -34,7 +34,7 @@ export const MainContent = () => {
   }
 
   return (
-    <div>
+    <div className="w-full flex flex-col items-center gap-8">
       <Form
         form={{
           register,
